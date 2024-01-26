@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The official website for the musician known as Poltergyst, signed to Dab & Stab Records / Hell Harbor Entertainment">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poltergyst</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+    <style>
+        /* Custom CSS styles */
+        header img {
+            margin-bottom: 10px;
+        }
+
+        .content {
+            color: white;
+            /* Change to the desired text color */
+            list-style-position: outside;
+            text-align: center;
+        }
+
+        .content :link {
+            color: red !important;
+        }
+
+        .content img {
+            max-width: 100%;
+            max-height: 200px;
+            /* Adjust the desired height */
+        }
+    </style>
+ <script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo_main.png" alt="Polt Logo" style="width: 200px; height: 200px;">
+        <h1>Welcome To Purgatory</h1>
+        <h2>Home Of The Poltergyst</h2>
+        <p></p>
+    </header>
+    <div class="divider"></div>
+
+    <section id="navmenu">
+      <nav>
+        <li><a href="https://ThePoltergyst.com/index.html">HOME</a></li>
+        <li><a href="https://ThePoltergyst.com/contact.html">CONTACT</a></li>
+        <li><a href="https://ThePoltergyst.com/links.html">LINKS</a></li>
+        <li><a href="https://ThePoltergyst.com/lore.html">LORE</a></li>
+        <li><a href="https://ThePoltergyst.com/music.html">MUSIC</a></li>
+        <li><a href="https://hellharbor.com/shop.html">SHOP</a></li>
+        <li><a href="https://ThePoltergyst.com/shows.html">SHOWS</a></li>
+        <li><a href="https://hellharbor.com/touring-and-tickets.html">TICKETS</a></li>
+      </nav>
+    </section>
+
+    <div class="content" id="markdownContent"></div>
+    <script>
+      function convertMarkdownToHTML(markdown) {
+        // Use a Markdown parser library like Showdown.js (https://github.com/showdownjs/showdown)
+        var converter = new showdown.Converter();
+        return converter.makeHtml(markdown);
+      }
+  
+      // Fetch the Markdown content from the URL
+      fetch('https://raw.githubusercontent.com/HellHarborEntertainment/www.ThePoltergyst.com/main/info/important/contact-details.md')
+        .then(response => response.text())
+        .then(markdown => {
+          // Convert the Markdown content to HTML
+          var html = convertMarkdownToHTML(markdown);
+  
+          // Insert the HTML content into the page
+          document.getElementById('markdownContent').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    </script>
+
+<div class="divider"></div>
+
+<section id="social">
+  <h2>Follow Poltergyst On Social Media</h2>
+  <a href="https://nav.ThePoltergyst.com/bandsintown" class="btn" target="_blank">BandsInTown</a>
+  <a href="https://nav.ThePoltergyst.com/facebook" class="btn" target="_blank">Facebook</a>
+  <a href="https://nav.ThePoltergyst.com/instagram" class="btn" target="_blank">Instagram</a>
+  <a href="https://nav.ThePoltergyst.com/twitter" class="btn" target="_blank">Twitter (X)</a>
+</section>
+
+
+<section id="hhe-discord">
+    <h2>Join The Hell Harbor Discord Server!</h2>
+<p>The Hell Harbor Entertainment Discord Server is the official virtual office environment for the company. Our office is open to the public and seamlessly integrates fan engagement with business operations. The public access area of the discord serves as a vibrant space for fans to connect with the Hell Harbor team, offering exclusive news updates and a direct line to the company through the Discord Ticket System—an efficient mode for business inquiries. This innovative approach not only fosters a direct connection with the public but also exemplifies Hell Harbor Entertainment's commitment to transparent and efficient communication. Within this shared space, fans can participate in real-time conversations with various branches of Hell Harbor Entertainment (including Dab & Stab Records and Infamous Development Studios personnel), creating a unique bridge between the audience and the creative forces behind the scenes.</p>
+<a href="https://hellharbor.com/discord" class="btn">Click To Join The Hell Harbor Discord Server</a>
+</section>
+
+    
+    <footer>
+        <p>&copy; 2018-2024 HELL HARBOR ENTERTAINMENT ALL RIGHTS RESERVED</p>
+    </footer>
+
+</body>
+</html>
+
